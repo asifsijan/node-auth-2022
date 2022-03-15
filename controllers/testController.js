@@ -1,12 +1,12 @@
 const Test = require("../models/Test");
-const asyncHandler = require("express-async-handler");
 
 
 
-const getByName = asyncHandler(async (req, res) => {
+
+const getByName = async (req, res) => {
     const test = await Test.find({ name: req.params.name });
     res.json(test);
-});
+};
 
 
 const getTests = async (req, res) => {
